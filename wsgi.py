@@ -8,7 +8,7 @@ log_path = "/mnt/log"
 @application.route("/")
 def hello():
     with open(log_path) as f:
-        data = f.readLines()
+        data = f.read()
     return data
 
 if __name__ == "__main__":
