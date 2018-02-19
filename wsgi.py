@@ -14,4 +14,4 @@ def hello():
 if __name__ == "__main__":
     application.run()
     with open(log_path, "w") as f:
-        f.write(socket.gethostname() + " " + time())
+        f.write(socket.gethostname() + " " + str(time()))
