@@ -1,4 +1,5 @@
 import socket
+from time import time
 from flask import Flask
 
 application = Flask(__name__)
@@ -13,5 +14,4 @@ def hello():
 if __name__ == "__main__":
     application.run()
     with open(log_path, "w") as f:
-        f.write(socket.gethostname() + " " + time.time())
-
+        f.write(socket.gethostname() + " " + time())
