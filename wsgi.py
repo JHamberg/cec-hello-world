@@ -9,8 +9,8 @@ log_path = "/mnt/log"
 def hello():
     with open(log_path, 'a+') as f:
         f.write(socket.gethostname() + " " + str(ctime()) + "\n")
-	f.seek(0)
-	data = f.read()
+        f.seek(0)
+        data = f.read()
     return data
 
 if __name__ == "__main__":
