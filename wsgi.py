@@ -7,9 +7,9 @@ log_path = "/mnt/log"
 
 @application.route("/")
 def hello():
-    with open(log_path, 'a+') as file:
-        file.write(socket.gethostname() + " " + str(ctime()) + "\n")
-        file.seek(0)
+    with open(log_path, 'a+') as log_file:
+        log_file.write(socket.gethostname() + " " + str(ctime()) + "\n")
+        log_file.seek(0)
         data = file.read()
     return Response(data, mimetype="text/plain")
 
