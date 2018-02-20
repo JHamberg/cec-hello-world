@@ -1,6 +1,6 @@
 import socket
 from time import ctime
-from flask import Flask
+from flask import Flask, Response
 
 application = Flask(__name__)
 log_path = "/mnt/log"
