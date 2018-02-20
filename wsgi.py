@@ -10,7 +10,7 @@ def hello():
     with open(log_path, 'a+') as file:
         file.write(socket.gethostname() + " " + str(ctime()) + "\n")
         file.seek(0)
-        data = f.read()
+        data = file.read()
     return Response(data, mimetype="text/plain")
 
 if __name__ == "__main__":
