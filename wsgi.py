@@ -7,11 +7,11 @@ log_path = "/mnt/log"
 
 @application.route("/")
 def hello():
-    with open(log_path, 'a+') as f:
-        f.write(socket.gethostname() + " " + str(ctime()) + "\n")
-        f.seek(0)
+    with open(log_path, 'a+') as file:
+        file.write(socket.gethostname() + " " + str(ctime()) + "\n")
+        file.seek(0)
         data = f.read()
-    return data
+    return Response(data, mimetype="text/plain")
 
 if __name__ == "__main__":
     application.run()
